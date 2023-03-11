@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use http\Client\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use function Symfony\Bundle\FrameworkBundle\Controller\redirectToRoute;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,23 +15,12 @@ class GProduitController extends AbstractController
     {
         return $this->render('g_produit/index.html.twig',['name'=>'salah-eddine','cote'=>'backend']);
     }
-    #[Route('dis_Hello', name: 'Hello')]
-    public function sayHello(): Response
+    #[Route('dis_Hello/{name}', name: 'Hello')]
+    public function sayHello(\Symfony\Component\HttpFoundation\Request $request, $name): Response
     {
-        $nombre_aleatoire =rand(0,10);
 
-        if($nombre_aleatoire %2 ==0)
-        {
-            return $this->forward('App\Controller\GProduitController::index');
-          //  return $this->redirectToRoute('app_g_produit');
-
-        }
-
-
-
-
-
-        return $this->render('g_produit/Hello.html.twig',['name'=>'salah-eddine','cote'=>'backend']);
+        dd($request);
+        return $this->render('g_produit/Hello.html.twig',['name'=>$name]);
 
     }
 }
