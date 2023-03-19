@@ -1,26 +1,28 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{asset('node_modules/bootstrap/dist/css/bootstrap.css') }}" class="css">
-</head>
-<body>
+{% extends 'template.html.twig' %}
+{% block body %}
+    {{ include('fragments/date-jour.html.twig') }}
 <table class="table  table-warning text-center">
     <thead class="table-info" >
     <tr >
         <th class="">name</th>
         <th>age</th>
+        <th>Message</th>
     </tr>
     </thead>
     <tbody>
     {% for user in users %}
-    <tr class="table-{% if loop.index is odd %}danger{% else %}dark{% endif %}"><td>{{ user.name }}</td><td>{{user.age}}</td></tr>
+    <tr class="table-{% if loop.index is odd %}danger{% else %}dark{% endif %}">
+        <td>{{ user.name }}</td>
+        <td>{{user.age}}</td>
+        <td>{{render(controller('App\\Controller\\GProduitController::sayHello',{name:user.name}))}}</td>
+
+
+
+    </tr>
     {% endfor %}
     </tbody>
 </table>
-</body>
-</html>
+{% endblock %}
+
+{% block page %}Lists Of Users{% endblock %}
+{% block myTitle %}Users{% endblock %}

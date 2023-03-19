@@ -20,7 +20,7 @@ class GProduitController extends AbstractController
     public function sayHello(\Symfony\Component\HttpFoundation\Request $request, $name): Response
     {
 
-       // dd($request);
+        // dd($request);
         return $this->render('g_produit/Hello.html.twig',['name'=>$name]);
 
     }
