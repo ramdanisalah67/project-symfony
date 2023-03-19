@@ -9,29 +9,18 @@
     <link rel="stylesheet" href="{{asset('node_modules/bootstrap/dist/css/bootstrap.css') }}" class="css">
 </head>
 <body>
-<table class="table table-sm">
- <thead>
-    <tr>
-        <th>notes</th>
+<table class="table  table-warning text-center">
+    <thead class="table-info" >
+    <tr >
+        <th class="">name</th>
+        <th>age</th>
     </tr>
- </thead>
-
+    </thead>
     <tbody>
-     {% for note in notes %}
-
-        <tr><td>{{ note }}</td> </tr>
-
+    {% for user in users %}
+    <tr class="table-{% if loop.index is odd %}danger{% else %}dark{% endif %}"><td>{{ user.name }}</td><td>{{user.age}}</td></tr>
     {% endfor %}
-
     </tbody>
 </table>
-<div class="alert alert-info">
-    <p>Nombre notes : {{ notes|length }}</p>
-    <p>min notes : {{ min(notes) }}</p>
-    <p>max notes : {{ max(notes) }}</p>
-
-</div>
-<img src="{{ asset('assets/images/') ~ path | default_image }}"  alt="">
-
 </body>
 </html>
