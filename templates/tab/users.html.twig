@@ -1,6 +1,8 @@
 {% extends 'template.html.twig' %}
 {% block body %}
     {{ include('fragments/date-jour.html.twig') }}
+
+    <a href="{{ path('app_tab',{taille:8} )}}">Listes des notes des  8 Etudiants</a>
 <table class="table  table-warning text-center">
     <thead class="table-info" >
     <tr >
