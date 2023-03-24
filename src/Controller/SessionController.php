@@ -23,7 +23,7 @@ class SessionController extends AbstractController
 
             }
             $mysession->set('password',$nbr_Visites);
-            return $this->render('session/index.html.twig', [
+            return $this->render('session/details.html.twig', [
                 'controller_name' => 'SessionController',
             ]);
 

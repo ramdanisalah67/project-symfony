@@ -11,7 +11,7 @@ class TemplateController extends AbstractController
     #[Route('/template', name: 'app_template')]
     public function index(): Response
     {
-        return $this->render('template/index.html.twig', [
+        return $this->render('template/details.html.twig', [
             'controller_name' => 'TemplateController',
         ]);
     }

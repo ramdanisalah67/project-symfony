@@ -28,7 +28,7 @@ class TodoController extends AbstractController
         }
 
 
-        return $this->render('todo/index.html.twig');
+        return $this->render('todo/details.html.twig');
     }
 
  //   #[Route('/AjouterTodo/{name}/{content}',name:'add_todo',defaults:['content'=>'sf6'])]

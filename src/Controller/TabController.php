@@ -16,7 +16,7 @@ class TabController extends AbstractController
         $notes[]=rand(0,20);
 
         }
-        return $this->render('tab/index.html.twig', [
+        return $this->render('tab/details.html.twig', [
             'notes' => $notes,'path'=>'   '
         ]);
     }

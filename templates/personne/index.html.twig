@@ -1,0 +1,34 @@
+{% extends 'template.html.twig' %}
+{% block body %}
+{% for message in (app.session.flashBag.get('error')) %}
+{{ message }}
+    {% endfor %}
+    <table class="table   text-center">
+        <thead class="table-info" >
+        <tr >
+            <th class="">name</th>
+            <th>age</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in personnes %}
+            <tr >
+                <td>{{ user.firstname }}</td>
+                <td>{{user.age}}</td>
+                <td>
+                    <a class="btn btn-info" href="{{ path('personne.detail',{id:user.id}) }}">details</a>
+                    <a class="btn btn-success" href="{{ path('personne.detail',{id:user.id}) }}">Update</a>
+                    <a class="btn btn-danger" href="{{ path('personne.detail',{id:user.id}) }}">Delete</a>
+                </td>
+
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
+{% block page  %}List des Etudiants{% endblock %}

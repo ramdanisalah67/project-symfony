@@ -1,0 +1,11 @@
+{% extends 'template.html.twig' %}
+{% block myTitle %}details{% endblock %}
+{% block page %}les detailes{% endblock %}
+{% block body %}
+    <p class="alert alert-success">Personne trouveé !!</p>
+<div class="">
+    <p>Name : {{ personnes.firstname }}</p>
+    <p>age : {{ personnes.age }}</p>
+</div>
+    <a class="btn btn-secondary" href="{{ path('personne.list')}}">retour Home</a>
+{% endblock %}

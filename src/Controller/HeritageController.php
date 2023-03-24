@@ -11,7 +11,7 @@ class HeritageController extends AbstractController
     #[Route('/twig', name: 'app_heritage')]
     public function index(): Response
     {
-        return $this->render('heritage/index.html.twig', [
+        return $this->render('heritage/details.html.twig', [
             'controller_name' => 'HeritageController',
         ]);
     }
