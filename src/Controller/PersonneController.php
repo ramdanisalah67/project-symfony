@@ -19,9 +19,8 @@ class PersonneController extends AbstractController
     }
 
     #[Route('/{id<\d+>}',name:'personne.detail')]
-    public function details(ManagerRegistry $doctrine,$id):Response{
-        $repository = $doctrine->getRepository(Personne::class);
-        $personnes = $repository->find($id);
+    public function details(Personne $personnes=null):Response{
+
         if(!$personnes) {
             $this->addFlash('error', "la personne qui a id = $id n'existe pas");
             return  $this->redirectToRoute('personne.list') ;
